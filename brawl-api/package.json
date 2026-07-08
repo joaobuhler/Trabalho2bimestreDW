@@ -9,7 +9,7 @@
     "dev": "node --watch src/server.js"
   },
   "dependencies": {
-    "@fastify/cors": "^11.2.0",
+    "@fastify/cors": "^8.5.0",
     "@fastify/swagger": "^8.15.0",
     "@fastify/swagger-ui": "^4.1.0",
     "dotenv": "^16.4.5",

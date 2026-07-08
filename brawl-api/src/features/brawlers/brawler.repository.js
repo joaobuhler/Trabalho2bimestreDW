@@ -4,13 +4,21 @@ class BrawlerRepository {
   }
 
   async findAll() {
+    console.log(">>> FIND ALL EXECUTOU");
+
     const result = await this.pool.query(
-      `SELECT b.*, c.name AS category_name, r.name AS rarity_name
-       FROM brawlers b
-       INNER JOIN categories c ON c.id = b.category_id
-       INNER JOIN rarities r ON r.id = b.rarity_id
-       ORDER BY b.id ASC`
+      `SELECT
+        b.*,
+        c.name AS category_name,
+        r.name AS rarity_name
+      FROM brawlers b
+      INNER JOIN categories c ON c.id = b.category_id
+      INNER JOIN rarities r ON r.id = b.rarity_id
+      ORDER BY b.id ASC`
     );
+
+    console.log(result.rows[0]);
+
     return result.rows;
   }
 

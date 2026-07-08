@@ -12,6 +12,11 @@ const estatisticasBrawlerRoutes = require('./features/estatisticasBrawler/estati
 const brawlerModoDeJogoRoutes = require('./features/brawlerModoDeJogo/brawlerModoDeJogo.routes');
 
 async function buildServer() {
+
+  await fastify.register(require("@fastify/cors"), {
+  origin: true,
+});
+
   // ---- Swagger / OpenAPI ----
   await fastify.register(require('@fastify/swagger'), {
     openapi: {
